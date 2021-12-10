@@ -1,0 +1,31 @@
+/* 
+FIXED
+    El elemento perderá sus medidas y su espacio reservado.
+    Si lo movemos usará el elemento html de referencia, y además se quedará fijo en esa posición
+    aunque hagamos scroll
+    A dia de hoy no se utiliza tanto desde que salió la propiedad Sticky -> que es una mezcla
+    entre fixed y relative. Pero no vale para navegadores antiguos
+
+STICKY
+    Cuando lo colocamos el elemento no se mueve, sigue en el mismo sitio, como pasaría con
+    relative, pero con top left right y button -> si ponemos por ejemplo top 0, le decimos que
+    cuando tenga top 0, se empiece a comportar como fixed.
+    Sin embargo hay varios sitios donde esta propiedad no nos va a funcionar:
+        -Coge como referencia el alto del padre, si no hay un alto establecido, no funciona
+        pero si acabamos con el alto del padre a medida que se scrollea, pierde de nuevo la propiedad fixed.
+
+        -Si le ponemos un overflow ya no funciona
+
+        https://www.youtube.com/watch?v=eRfJeAwlCk0&list=PLROIqh_5RZeDbvISffzihyxzqJBt_z3-Z&index=39
+*/
+.box{
+    background-color: bisque;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+.box-1{
+    background-color: aqua;
+    position: fixed;
+    bottom: 0;
+}
