@@ -1,0 +1,65 @@
+/* ¿Cómo funciona css?
+    
+Especifidad -> Establece como de específico es un selector
+    para saber qué estilo aplicar.
+    El cálculo se realiza con la siguiente fórmula
+        
+    Etiquetas y pseudoelementos 001
+        Clase, atributos y pseudoclases 010
+        Ids 100
+        Estilos en linea 1000
+        !important Gana a todo, pero mala cosa usarlo,
+        nos cargamos la especifidad 
+        
+        Al poner el cursor sobre un elemento, vemos su valor
+        entre paréntisis (0, 0 , 1)
+    
+    Cascada -> Funciona siempre que la especifidad sobre el
+    elemento sea la misma
+    
+    Herencia -> Es la capacidad que tiene algunos elementos
+    de heredar algunas propiedades de sus elementos 
+    contenedores (padres, abuelos, etc), por ejemplo, el span
+    que tenemos dentro de h1, hereda de h1, por eso se ve 
+    diferente del span de fuera del h1
+        No siempre pasa, si ponemos un <a> dentro de un p, el enlace
+    no coge el estilo de su padre, eso pasa con los elementos
+    de enlace, que no heredan, son los bastardos XD podemos forzar
+    la herencia con inherit, ejemplo color: inherit;
+        Podemos querer lo contrario, que no herede las propiedades
+    del padre usamos initial(omite todo de lo que heredas y se tu mismo)
+    ej: color:initial;
+*/
+
+
+h1{
+    background-color: red;
+}
+.title{
+    background-color: blue;
+}
+#title{
+    background-color: green;
+}
+h1.title{
+    background-color: yellow;
+}
+h1#title{
+    background-color: teal;
+}
+/* Este gana, pues es el más especifico,
+ aunque se encuentre arriba de todo */
+ h1.title#title{
+    background-color: tomato;
+}
+
+/* ¿Qué conviene hacer? usar selectores de clase
+siempre que se pueda, recordando que podemos poner más
+de una clase a cada elemento */
+
+p{
+    color: tomato;
+}
+a{
+    color: inherit;
+}

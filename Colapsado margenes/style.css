@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+
+.header{
+    background-color: lightcoral;
+    height: 100px;
+    margin-bottom: 20px;
+    padding-top: 0.1px;
+}
+
+.box-1,
+.box-2{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: darkolivegreen;
+    width: 300px;
+    height: 300px;
+}
+
+.box-2{
+    /* Si nos damos cuenta, tenemos un mardin-button de la caja de arriba, y cuando le ponemos
+    a esta caja un margin-top, pensariamos que se sumaria a la anterior, creando un margin de 
+    40 px entre las dos cajas, pero no es el caso, esto es debido a que los márgenes verticales
+    colapsan. Es un problema que no tiene solución, per*/
+    margin-top: 20px;
+}
+
+/* Una solucción de desarroladores? empijar los elemento siempre hacia abajo y prescindir
+del to para no liar las cosas */
+
+/* Otro drama que tenemos es el del los padres con los hijos. Si nos damos cuenta, cuando le pusimos
+al header el title, la cabecerá bajó. Esto es por culpa del margen por defecto que tiene el title
+Lo normal seria pensar, que bajaria con respecto al header y no lo arrastaría con el. Para solucionar
+esto hay 3 trucos: 
+    1=> Poner al header un overflow:hidden;
+    2=> Meter un padding en el header, con 0.1px llegaría.
+    3=>Añadiendo un border, tambien de 0.1 px
+*/
+

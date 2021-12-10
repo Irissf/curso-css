@@ -1,0 +1,61 @@
+/*  Selectores Simples
+        selectores elementales
+            selector universal -> *
+            selector de etiqueta -> h1, span, p ,etc
+        selectores de atributo
+            id -> #id
+            clase -> .clase
+            otros atributos -> [nombre atributo]
+                            [nombre atribute + value]
+                            [atributo^=valor] vemos si el valor empieza por ese nombre
+                            [atributo*=valor] valor que coincida nombre no importa donde esté
+                            [atributo$=valor] si termina en el nombre indicado
+                            [atributo|=valor] para idiomas lang, ya que acepta lang "en" y lang "en-GB"
+*/  
+
+/* =============== selector universal ================ */
+*{
+    /* Afecta a todo, ha de usarse con mucho cuidado */
+    background-color: wheat;
+}
+
+/* ============== selector de etiqueta =============== */
+h1{
+    color: tomato;
+}
+
+/* ====================== id ========================== */
+#parrafo{
+    color: yellow;
+}
+
+/* ===================== clase ======================= */
+.etiqueta{
+    color: yellowgreen;
+}
+
+/* ================== Otros atributos ================ */
+[href]{
+    text-decoration: none;
+    color: yellow;
+    font-size: 20px;
+}
+/*  [nombre atribute + value] */
+[href="Google.es"]{
+    color: white;
+}
+/* [atributo^=valor] */
+[href^="#"]{
+    background-color: blueviolet;
+}
+/* [atributo*=valor] */
+[href*="lor"]{
+    color: rgb(201, 171, 230);
+}
+/* [atributo$=valor] */
+[href$="es"]{
+    font-size: 30px;
+}
+/* ======================================================== */
+/* ======================================================== */
+

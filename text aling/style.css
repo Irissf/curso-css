@@ -1,0 +1,74 @@
+/*
+    Text-aling es la propiedad que nos permite alinear horizontalmente el contenido
+    de un elemento de bloque siempre que el contenido NO TENGA ANCHO DECLARADO
+
+    Acepta 4 posibles valores
+        text-align: left; -> Alinea el contenido a la izquierda.
+        text-align: right; -> Alinea el contenido a la derecha
+        text-align: center; -> Alinea el contenido al centro
+        text-align_ justify; -> Alinea el contenido de forma justificada. 
+
+*/
+
+*{
+    box-sizing: border-box;   
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+.text{
+    text-align: justify;
+}
+
+
+/* Tex-align centra el contenido de los elementos de bloque, por lo que no vale para <a> que
+es un elemento inline */
+.link{
+    background-color: #666;
+    color: #fff;
+
+    /* Si queremos centrar la caja, ya nos toca usar */
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Centramos el contenido */
+    /* Para poder centrarlo tendríamos que pasarlo a block, no funcionaría con inline-block*/
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.img{
+    border:3px solid lightseagreen;
+
+    /* Las imagenes por defecto es de inline-block, debemos pasarla a block 
+    Nuestro segundo problema, es que el contenido que es la imagen, ocupa todo el ancho de la caja
+    por lo que no se centra.
+    Se centra, como un div, con margin-left y margin-right*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Si no ponemos el display-block, no funciona el margin auto */
+    /* Otra solución es meter la imagen en un div, y ahi aplicar el text-align center */
+}
+
+.container{
+    /* Ojo, si le ponemos u tamaño, ya no funciona */
+    border:3px solid lightseagreen;
+    text-align: center;
+}
+
+.box{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border: 2px solid lightseagreen;
+
+    /* El contenido no tiene ancho, asi que si le funciona text-align */
+    text-align: center;
+}
+

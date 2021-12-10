@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;   
+}
+body{
+    margin: 0;
+    background-color: #333;
+}
+
+.box{
+    text-align: center;
+}
+
+.box-1{
+    /* Si le damos a este el absolute y se lo quitamos a boz 1,
+    de pronto el box 2 se coloca donde estaba el box 1 pierde su espacio reservado */
+    background-color: darkgoldenrod;
+}
+
+.box-2{
+    background-color: burlywood;
+    /* Al darle position absolute a perdido sus medidas, ya no ocupa el 100%, si le damos
+    medidas, parecerá que no ha pasado nada*/
+    position: absolute;
+
+    /* si no tiene un elemento padre que lo contenga, pues ese toma la referencia de todo
+    el html. */
+    top: 0;
+}
+
+/* Si tenemos un padre que lo contenga, con un position relative, por ejemplo, el absoluto
+se movera tomando como medida, las medidas del padre contenedor, y no el html */
+.container{
+    background-color: chocolate;
+    width: 300px;
+    height: 300px;
+    margin-top: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+.box-3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    background-color: rgb(224, 217, 207);
+}
+/* Con display abosulute a los ELEMENTOS DE LINEA no necesitamos ponerles display block
+y ya podemos moverlos, ponerles margenes etc. */

@@ -1,0 +1,114 @@
+/* Un sitio web se compone de cajas que está compuesta de:
+    Contenido
+    
+        Margin -> Es la propiedad que nos permite generar espacio
+    entre los elementos.
+    Margin es un shorthand(propiedad abreviada) que controla
+    los 4 lados posibles de lo márgenes
+    Tenemos por separado, margin-top, margin right, 
+    margin-left y margin button
+    O podemos meter más de un valor que va en la dirección de las
+    agujas del reloj
+    4 valores -> margin: top right botton left;
+    3 valores -> margin: top right/left botton;
+    4 valores -> margin: top/botton right/left;
+    4 valores -> margin: top/right/botton/left;
+
+    
+        Padding->Es la propiedad que nos permite generar espacio 
+    interno entre el borde y la caja. Separando el contenido de los
+    bordes.
+    Al igual que margin, es un shorthand
+
+        Borde-> Es la propiedad que nos permite modificar el borde 
+    de la caja. Es al igual que padding y margin un shorthand que 
+    agrupa 3 propiedades
+        borde-width: ancho del border
+        border-style: estilo del borde
+        border-color: color del borde
+    A cada una podemos aplicarle igual que a padding y margin lo del top
+    left right etc
+
+        Box-sizing -> Es la propiedad que nos permite controlar el cálculo 
+    que hace el navegador a la hora de modificar las propiedades content
+    padding y border.
+    Los 2 valores que podemos darle son
+        content-box -> Valor por defecto
+        border-box -> Cálculo de tamaño del elemento incluyendo el 
+    padding y el margin 
+
+    Width -> ancho
+    Height -> alto
+*/
+*{
+         /* Cuando ponemos 200 de ancho y un padding de 10, esa cantidad se aumenta
+    y la caja pasa a tener 220px Para solucionarlo usamos el box-sizing*/
+    box-sizing: border-box;
+    /* De esta manera todas las cajas no cambia de tamaño al incluir el padding */
+}
+
+body{
+    background-color: #333;
+    color:#fff;
+    margin: 0; /*Es recomendable para si ponemos otros div o nav o header
+    nos hará un margen entre ellos*/
+}
+.title{
+    /* margin-left:auto no funciona si no hay un ancho establecido, eso se debe
+    a que ya tiene un ancho por defecto de toda la pantalla.*/
+    margin-left: auto;
+    background-color: lawngreen;
+    padding: 30px;
+    color: black;
+}
+.bloque{
+    background-color: burlywood;
+    width: 200px;
+    height: 200px;
+
+    /* centrar, que seria igual a magin-left:auto y margin-right:auto, lo caul es
+    mejor hacer para no tocar los otros márgenes y complicarnos la vida al final.*/
+    margin: auto;
+    padding: 10px;
+    /* border-radius: 45% 55% 25% 75% / 51% 72% 28% 49% ; */
+    
+
+
+}
+.inline{
+    /* Con los elementos inline se funciona de otra manera
+    al jugar con los anchos y los altos, el tamaño lo determina
+    su contenido. */
+    background-color: cadetblue;
+    color:inherit;
+    font-size: 30px;
+
+    /* Los margin top y button no funcionan en los elemento inline,
+    solo funcionan los horizontales, y no los verticales. Esa restricción
+    no la tenemos con padding*/
+    margin-left: 100px;
+    padding: 20px; 
+
+   
+
+}
+
+.borde{
+    margin: 100px;
+    width: 200px;
+    height: 100px;
+}
+
+.bordeUno{
+    border: rgb(230, 227, 64) dotted 3px;
+}
+
+.bordeDos{
+    border: 3px solid white;
+}
+
+.bordeTres{
+    border-color: tomato turquoise greenyellow pink;
+    border-style: solid solid  dotted;
+    border-width: 4px 8px;
+}

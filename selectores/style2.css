@@ -1,0 +1,31 @@
+/*  Selectores Complejos
+        Selectores Agrupados
+        Selectores Combinadores
+            selector descendiente
+            selector del hermano siguiente
+            selector de hermanos siguientes~
+        Pseudoclases - Pseudoelementos -> más adelante
+*/
+
+/* Selectores Agrupados */
+p,h1{
+    color: tomato;
+}
+/* selector descendiente */
+div h2{
+    color: yellowgreen;
+} 
+/* selector del hermano siguiente */
+.sub + .text{
+    /* el hermano siguiente */
+    background-color: wheat;
+}
+/* todos los hermanos siguientes */
+.sub ~ p{
+    font-size: 20px;
+}
+.container > p{
+    /* selecciona al hijo directo y no al nieto */
+    color: purple;
+}
+/* No es buena idea bajar más de dos elementos */
