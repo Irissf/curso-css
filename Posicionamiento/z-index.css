@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+}
+
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: #555;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #333;
+}
+
+.box-1{
+    background-color: aquamarine;
+    position: relative;
+
+    /* Como una capa en photoshop, mejor no usar números consecutivos, usar por ejemplo
+    en uno 10 y en otro 20, por si el programa crece y necesitamos  ponerles z-index */
+    z-index: 1; 
+}
+
+.box-2{
+    background-color: bisque;
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
+
+.box-3{
+    background-color: darkgoldenrod;
+    position: relative;
+    left: 150px;
+    top: -50px;
+    z-index: -1;
+}
+
+/* Otro problema de z-index es con los padres e hijos, el padre nunca se va a colocar por delante
+del hijo, pero podemos poner al hijo detrás del padre. Pero si el padre tiene un z-index establecido
+este método ya no funcionará
+ */
