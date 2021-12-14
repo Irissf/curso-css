@@ -1,0 +1,61 @@
+/* 
+    Las medidas en css se pueden agrupar en 2 grupos, absolutas y relativas.
+
+    Las medidas absolutas NO CAMBIAN y siempre mantendran su tamaño independientemente del dispositivo
+    o la interaccion del usuario.
+    La más usada en px (pixeles) cura medida es 1/96 de 1in, pero existen otras como:
+        cm (centímetros) -> 1cm = 96px/2,54
+        mm (milímetros) -> 1mm = 1/10 de 1 cm
+        Q (cuarto de milímetro)-> 1Q = 1/40 de 1 cm
+        in (inches,pulgadas) -> 1in = 2,54cm = 96px
+        pc (picas) -> 1pc = 1/16 de 1in
+        pt (puntos) -> 1pt = 1/72 de 1in
+
+    Las medidas relativas SIEMPRE dependen de un contexto, son las recomendadas utilizar en la gran
+    mayoría de ocasiones porque nos van a permitir que todos los elementos escalen proporcionalmente.
+    Las más usadas son em, rem, %, vw, vh, vmin y vmax aunque tenemos otras como:
+        ex -> Altura x de la fuente del elemento.
+        ch -> la medida del acho del glifo "0" de la letra elemento.
+        Lh -> Altura de la línea del elemento.
+
+    Diferencia entre rem y em
+        rem -> Corresponde a la medida de la "m" de la raiz del documento(html)
+            Ej -> 16px = 1 rem, 32px = 2rem...etc
+        em -> Corresponde a la medida de la "m" del contexto donde nos encontremos. (La pantalla)
+            Por defecto tenemos 16px en el body, pero si le ponemos 10px en el body, em cambia
+            Ahora 10px = 1em y no 16px
+
+        El estandar del tamaño de fuente por defecto en la raiz del documento es 16px,
+        y NO ES RECOMENDABLE MODIFICARLO
+
+        NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de fuente)
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+    color: lightcoral;
+    font-size: 10px;
+}
+.em{
+    /* Podemos ver que al cambiar el tamño de fuente en body cambió la medida, para textos
+    es recomendable usar REM. ¿Cuando es bueno usar em? Si el tamaño debe crecer proporcionalemte
+    al tamaño del texto, usaremos em, como mostramos a continuación con .link*/
+    font-size: 2em;
+}
+
+.link{
+    background-color: lightcoral;
+    color: #333;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    font-size: 2rem;
+}
+
+.rem{
+    font-size: 2rem;
+}
